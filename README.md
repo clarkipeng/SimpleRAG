@@ -23,6 +23,8 @@ High level flow -> prompt -> embeded using `all-MiniLM-L6-v2` -> find most simil
 
 Since we always provide the top-1 sample as context, some prompts might not be similar to any text sample, and might get appeneded a unhelpful text sample. This can be circumvented by modifying the similarity_cutoff in the config which is the cosine-sim cutoff for appending the rag context.
 
-# Any additional features or considerations. We will have a 1-hour whiteboard discussion on your implementation, limitations, and future directions.
+# Implementation details
 
+Textual is used for the tui
 Model is served on a separate thread, to support non-python libraries like llama.cpp.
+HF and llama.cpp are supported for LLM serving.
