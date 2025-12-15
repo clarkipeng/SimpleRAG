@@ -1,0 +1,23 @@
+[project]
+name = "test"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "transformers[torch]==4.57.0",
+    "bitsandbytes",
+    "textual",
+    "litellm",
+    "llama-cpp-python[server]",
+    "huggingface_hub",
+    "pandas",
+    "sentence-transformers",
+    "accelerate", # https://github.com/huggingface/sentence-transformers/issues/3298
+]
+
+[tool.uv]
+override-dependencies = [
+    "huggingface_hub > 0.0.0" # Re-asserting hub without extras might help, but explicit exclusion is better below
+]
